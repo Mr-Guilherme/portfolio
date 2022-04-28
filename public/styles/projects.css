@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #041F31;
+    color: #BDEBEA;
+
+    font-family: 'Montserrat', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialised !important;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+#content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.sub-title {
+    color: #BDEBEA;
+
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 26px;
+    letter-spacing: 0.04rem;
+}
+
+.button-fill {
+    background: linear-gradient(to right, #00F5A0, #00D9F5);
+    color: #252728;
+    padding: 12px 20px;
+    border-radius: 0.375rem; /* 6px */
+    border: none;
+}
+
+header {
+    height: 6.5rem; /* 100px */
+
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #BDEBEA;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19.5px;
+}
+
+header nav .link-pages a:first-child {
+    margin-right: 5.375rem; /* 86px */
+    text-decoration: underline; 
+    text-decoration-color:  #00F5A0;
+    text-decoration-thickness: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+main {
+    margin: 96px auto;
+}
+
+main h2.sub-title {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+main .card-container {
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .card {
+    align-self: stretch;
+    width: 32.75rem; /* 524 px */
+
+    border-radius: 0 0 6px 6px;
+
+    background-color: #222525;
+}
+
+main .card img {
+    border: none;
+    border-radius: 6px 6px 0 0;
+
+    width: 32.75rem; /* 524 px */
+}
+
+main .card .card-content {
+    padding: 30px 26px;
+}
+
+main .card .card-content h3 {
+    font: 600 20px 'Montserrat', sans-serif;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+main .card .card-content .tags {
+    margin-bottom: 20px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .card .card-content .tag {
+    margin-top: 10px;
+    margin-right: 12px;
+    padding: 8px 16px;
+    border-radius: 4px;
+
+    font: 400 14px 'Montserrat', sans-serif;
+}
+
+main .card .card-content p {
+    text-align: justify;
+    
+    font: 400 16px 'Montserrat', sans-serif;
+    
+    line-height: 24px;
+    letter-spacing: 0.04rem;
+}
+
+main .card .card-content .card-buttons {
+    margin-top: 1.5rem;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main .card .card-content .card-buttons a {
+    text-decoration: none;
+    text-align: center;
+
+    font: 600 17px 'Montserrat', sans-serif;
+}
+
+footer {
+    margin: 0 auto 92px;
+
+    max-width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+}
+
+footer .social-media {
+    margin-bottom: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .social-media .media p {
+    margin-top: 8px;
+
+    font: 400 12px 'Montserrat', sans-serif;
+    line-height: 11px;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+}
+
+footer .pages {
+    margin: 0 0 64px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .pages a {
+    text-decoration: none;
+
+    color: #BDEBEA;
+
+    font: 400 14px 'Montserrat', sans-serif;
+    line-height: 17px;
+    /* letter-spacing: 0.12rem; */
+}
+
+footer .final-text {
+    font: 400 14px 'Montserrat', sans-serif;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+}
+
+@media only screen and (max-width: 1024px) {
+    main {
+        margin-top: 50px;
+    }
+
+    main .card-container {
+        justify-content: center;
+    }
+    
+    main .card:nth-child(2) {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and  (max-width: 768px) {
+    #content {
+        padding: 0 1rem;
+    }
+
+    header nav .link-pages a:first-child {
+        margin-right: 3rem; /* 86px */
+    }
+        
+    main .card {
+        max-width: 32rem; /* 524 px */
+        width: 100%; /* 524 px */
+    }
+    
+    main .card img {
+        max-width: 32rem; /* 524 px */
+        width: 100%; /* 524 px */
+    }
+}
+
+@media only screen and  (max-width: 425px) {
+    header nav .link-pages a:first-child {
+        margin-right: 2rem; /* 86px */
+    }
+
+    main .card .card-content .card-buttons {
+        flex-direction: column;
+    }
+
+    main .card .card-content .card-buttons a:first-child {
+        margin-bottom: 1rem;
+    }
+}

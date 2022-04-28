@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Rodrigues - Web Developer</title>
+    <meta name="description" content="Guilherme Rodrigues' personal portfolio web developer">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="developer, web developer, fullstack developer, backend developer, desenvolvedor">
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/svg">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        <header>
+            <nav>
+                <a href="/">Home</a>
+
+                <div class="link-pages">
+                    <a href="/pages/projects/">Projects</a>
+                    <a class="button-fill" href="/pages/contact/">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <h2 class="sub-title">Send me a message</h2>
+            <form action="https://formsubmit.co/guilherme.m.rods@gmail.com" method="POST">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="John Doe" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="text" placeholder="john_doe@gmail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Hello, what's up?" type="text" required></textarea>
+                </div>
+
+                <button class="button-fill">Submit</button>
+            </form>
+        </main>
+
+        <footer>
+            <section class="social-media">
+                <div class="media" title="guilherme.m.rods@gmail.com">
+                    <a target="_blank" href="mailto:guilherme.m.rods@gmail.com">
+                        <img src="/assets/gmail.svg" alt="">
+                    </a>
+                    <p>Email</p>
+                </div>
+                <div class="media">
+                    <a target="_blank" href="https://www.linkedin.com/in/guilherme-m-rodrigues/">
+                        <img src="/assets/linkedin.svg" alt="">
+                    </a>
+                    <p>Linkedin</p>
+                </div>
+                <div class="media">
+                    <a target="_blank" href="https://github.com/Mr-Guilherme">
+                        <img src="/assets/github.svg" alt="">
+                    </a>
+                    <p>Github</p>
+                </div>
+            </section>
+
+            <section class="pages">
+                <a href="pages/projects/">
+                    Projects
+                </a>
+                
+                <a href="pages/contact/">
+                    Contact
+                </a>
+            </section>
+            
+            <section class="final-text">
+                <p>GUILHERME RODRIGUES DEVELOPER 2022</p>
+            </section>
+        </footer>
+    </div>
+</body>
+</html>
