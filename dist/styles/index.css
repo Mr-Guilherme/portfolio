@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #041F31;
+    color: #BDEBEA;
+
+    font-family: 'Montserrat', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialised !important;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+#content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.sub-title {
+    color: #BDEBEA;
+
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 26px;
+    letter-spacing: 0.04rem;
+}
+
+.button-fill {
+    background: linear-gradient(to right, #00F5A0, #00D9F5);
+    color: #252728;
+    padding: 12px 20px;
+    border-radius: 0.375rem; /* 6px */
+    border: none;
+}
+
+header {
+    height: 6.5rem; /* 100px */
+
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #BDEBEA;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19.5px;
+}
+
+header nav .link-pages a:first-child {
+    margin-right: 5.375rem; /* 86px */
+}
+
+main #hero {
+    min-height: calc(100vh - 96px - 104px);
+
+    margin: 96px auto 0;
+
+    /*  display: flex;
+    justify-content: center; */
+}
+
+main #hero .hero-wrapper {
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main #hero .text-hero {
+    height: min-content;
+    align-self: center;
+}
+
+main #hero .text-hero h3 {
+    font: 400 1.25rem 'Tinos', sans-serif;
+    color: #D7E5EC;
+    line-height: 23px;
+}
+
+main #hero .text-hero h1 {
+    font: 600 3rem 'Montserrat', sans-serif;
+    line-height: 88px;
+
+    background: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+main #hero .text-hero p {
+    margin-bottom: 1.75rem;
+
+    width: 32.125rem; /* 514px */
+    
+    line-height: 24px;
+    letter-spacing: 0.04rem;
+
+    color: #BDEBEA;
+}
+
+main #hero .text-hero a.button-fill {
+    text-decoration: none;
+
+    border: none;
+
+    font: 500 1rem 'Montserrat', sans-serif;
+}
+
+main #hero .hero-wrapper img {
+   
+    max-width: 500px; /* 500px */
+    height: min-content;
+}
+
+main #hero .arrow-wrapper {
+    margin: 2rem auto 0;
+    
+    display: flex;
+    justify-content: center;
+}
+
+main #aboutMe {
+    padding-top: 32px;
+    margin-bottom: 130px;
+}
+
+main #aboutMe h2.sub-title {
+    margin: 0 0 20px 24px;
+}
+
+main #aboutMe .about-container { 
+    display: flex;
+    align-items: stretch;
+}
+
+main #aboutMe .about-container .vertical-bar {
+    margin-right: 16px;
+
+    width: 6px;
+    /* height: 90px; */
+    /* gradient */
+
+    background: linear-gradient(0, #00F5A0 0%, #00D9F5 100%);
+    border-radius: 3px;
+}
+
+main #aboutMe .about-container p {
+    max-width: 960px;
+
+    color: #BDEBEA;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.04rem;
+}
+
+main #projects {
+    margin-bottom: 130px;
+}
+
+main #projects h2.sub-title {
+    margin-bottom: 32px;
+}
+
+main #projects .card-container {
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main #projects .card {
+    align-self: stretch;
+    width: 32.75rem; /* 524 px */
+
+    border-radius: 0 0 6px 6px;
+
+    background-color: #222525;
+}
+
+main #projects .card img {
+    border: none;
+    border-radius: 6px 6px 0 0;
+
+    width: 32.75rem; /* 524 px */
+}
+
+main #projects .card .card-content {
+    padding: 30px 26px;
+}
+
+main #projects .card .card-content h3 {
+    font: 600 20px 'Montserrat', sans-serif;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+main #projects .card .card-content .tags {
+    margin-bottom: 20px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main #projects .card .card-content .tag {
+    margin-top: 10px;
+    margin-right: 12px;
+    padding: 8px 16px;
+    border-radius: 4px;
+
+    font: 400 14px 'Montserrat', sans-serif;
+}
+
+main #projects .card .card-content p {
+    text-align: justify;
+    
+    font: 400 16px 'Montserrat', sans-serif;
+    
+    line-height: 24px;
+    letter-spacing: 0.04rem;
+}
+
+main #projects .card .card-content .card-buttons {
+    margin-top: 1.5rem;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main #projects .card .card-content .card-buttons a {
+    text-decoration: none;
+    text-align: center;
+
+    font: 600 17px 'Montserrat', sans-serif;
+}
+
+main #projects .link-wrapper {
+    margin: 36px auto 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+main #projects .link-wrapper a.button-fill {
+    text-decoration: none;
+
+    padding: 18px 74px;
+
+    display: inline-block;
+
+    font: 500 16px 'Montserrat', sans-serif;
+}
+
+main #skills {
+    margin-bottom: 280px;
+}
+
+main #skills h2.sub-title {
+    margin-bottom: 28px;
+}
+
+main #skills .skills-wrapper {
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 60px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+main #skills .skills-wrapper .skill {
+    text-align: center;
+}
+
+main #skills .skills-wrapper .skill img {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+main #skills .skills-wrapper .skill p {
+    margin-top: 20px;
+    line-height: 20px;
+}
+
+footer {
+    margin: 0 auto 92px;
+
+    max-width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+}
+
+footer .social-media {
+    margin-bottom: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .social-media .media p {
+    margin-top: 8px;
+
+    font: 400 12px 'Montserrat', sans-serif;
+    line-height: 11px;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+}
+
+footer .pages {
+    margin: 0 0 64px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .pages a {
+    text-decoration: none;
+
+    color: #BDEBEA;
+
+    font: 400 14px 'Montserrat', sans-serif;
+    line-height: 17px;
+    /* letter-spacing: 0.12rem; */
+}
+
+footer .final-text {
+    font: 400 14px 'Montserrat', sans-serif;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+}
+
+@media only screen and  (max-width: 1024px) {
+    main #hero {
+        height: calc(100vh - 50px - 104px);
+    
+        margin: 40px auto 0;
+    
+        /*  display: flex;
+        justify-content: center; */
+    }
+
+    main #hero .hero-wrapper {
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+    main #hero .hero-wrapper img {
+        margin: -3.5rem auto 0;
+
+        width: 100%;
+        /* max-width: 100%; 500px */
+    }
+
+    main #hero .text-hero p {
+        width: 100%; /* 514px */
+        max-width: 32rem;
+    }
+
+    main #hero .arrow-wrapper {
+        /* margin: 3rem auto 0; */
+        margin-top: -3rem;
+    }
+
+    
+    main #projects .card-container {
+        justify-content: center;
+    }
+    
+    main #projects .card:nth-child(2) {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and  (max-width: 768px) {
+    #content {
+        padding: 0 1rem;
+    }
+
+    header nav .link-pages a:first-child {
+        margin-right: 3rem; /* 86px */
+    }
+
+    main #hero .text-hero h1 {
+        line-height: 70px;
+    }
+    
+    main #hero .text-hero p {
+        max-width: 30rem;
+    }
+        
+    main #projects .card {
+        max-width: 32rem; /* 524 px */
+        width: 100%; /* 524 px */
+    }
+    
+    main #projects .card img {
+        max-width: 32rem; /* 524 px */
+        width: 100%; /* 524 px */
+    }
+
+    main #skills .skills-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 40px;
+    }
+
+    main #skills .skills-wrapper .skill img {
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+@media only screen and  (max-width: 425px) {
+    header nav .link-pages a:first-child {
+        margin-right: 2rem; /* 86px */
+    }
+
+    main #hero {
+        min-height: max-content;
+        height: 100%;
+    }
+
+    main #hero .hero-wrapper img {
+        margin: -1.5rem auto 0;
+    }
+
+    main #hero .text-hero h1 {
+        line-height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    main #hero .arrow-wrapper {
+        /* margin: 3rem auto 0; */
+        margin-top: -1rem;
+    }
+
+    main #projects .card .card-content .card-buttons {
+        flex-direction: column;
+    }
+
+    main #projects .card .card-content .card-buttons a:first-child {
+        margin-bottom: 1rem;
+    }
+
+    main #skills .skills-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+
+    main #skills .skills-wrapper .skill img {
+        width: 5rem;
+        height: 5rem;
+    }
+}
