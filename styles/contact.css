@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #041F31;
+    color: #BDEBEA;
+
+    font-family: 'Montserrat', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialised !important;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+#content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.sub-title {
+    color: #BDEBEA;
+
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 26px;
+    letter-spacing: 0.04rem;
+}
+
+.button-fill {
+    background: linear-gradient(to right, #00F5A0, #00D9F5);
+    color: #252728;
+    padding: 12px 20px;
+    border-radius: 0.375rem; /* 6px */
+    border: none;
+}
+
+header {
+    height: 6.5rem; /* 100px */
+
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #BDEBEA;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19.5px;
+}
+
+header nav .link-pages a:first-child {
+    margin-right: 5.375rem; /* 86px */
+}
+
+main {
+    margin: 96px auto;
+
+    max-width: 540px;
+}
+
+main form {
+    margin-top: 24px;
+}
+
+main form .input-group {
+    margin-bottom: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main form .input-group label {
+    margin-bottom: 8px;
+
+    font: 400 14px 'Montserrat', sans-serif;
+    line-height: 17px;
+}
+
+main form .input-group input {
+    color: #BDEBEA;
+    background-color: #041F31;
+    padding: 0 12px;
+
+    height: 48px;
+
+    border: 1px solid #BDEBEA;
+    border-radius: 6px;
+
+    font: 500 16px 'Montserrat', sans-serif;
+    line-height: 20px;
+
+    transition: border 500ms ease-in-out;
+}
+
+main form .input-group input:focus {
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-image: linear-gradient(#041F31, #041F31), radial-gradient(circle at top left, #00F5A0,#00D9F5);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+main form .input-group textarea {
+    resize: vertical;
+
+    color: #BDEBEA;
+    background-color: #041F31;
+    padding: 14px 12px;
+
+    min-height: 165px;
+
+    border: 1px solid #BDEBEA;
+    border-radius: 6px;
+
+    font: 500 16px 'Montserrat', sans-serif;
+    line-height: 20px;
+
+    transition: border 500ms ease-in-out;
+}
+
+main form .input-group textarea:focus {
+    outline: none;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-image: linear-gradient(#041F31, #041F31), radial-gradient(circle at top left, #00F5A0,#00D9F5);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+main form button.button-fill {
+    cursor: pointer;
+
+    width: 100%;
+    
+    display: block;
+
+    font: 500 16px 'Montserrat', sans-serif;
+}
+
+
+footer {
+    margin: 0 auto 92px;
+
+    max-width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+}
+
+footer .social-media {
+    margin-bottom: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .social-media .media p {
+    margin-top: 8px;
+
+    font: 400 12px 'Montserrat', sans-serif;
+    line-height: 11px;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+}
+
+footer .pages {
+    margin: 0 0 64px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .pages a {
+    text-decoration: none;
+
+    color: #BDEBEA;
+
+    font: 400 14px 'Montserrat', sans-serif;
+    line-height: 17px;
+    /* letter-spacing: 0.12rem; */
+}
+
+footer .final-text {
+    font: 400 14px 'Montserrat', sans-serif;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+}
+
+@media only screen and (max-width: 1024px) {
+    main {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and  (max-width: 768px) {
+    #content {
+        padding: 0 1rem;
+    }
+
+    header nav .link-pages a:first-child {
+        margin-right: 3rem; /* 86px */
+    }
+}
+
+@media only screen and  (max-width: 425px) {
+    header nav .link-pages a:first-child {
+        margin-right: 2rem; /* 86px */
+    }
+}
