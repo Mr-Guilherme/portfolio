@@ -161,6 +161,46 @@ body {
   transform: translateY(-2px);
 }
 
+.skill:nth-child(1):hover {
+  cursor: url('./assets/typescript.svg') 12 12, pointer;
+}
+
+.skill:nth-child(2):hover {
+  cursor: url('./assets/javascript.svg') 12 12, pointer;
+}
+
+.skill:nth-child(3):hover {
+  cursor: url('./assets/node.svg') 12 12, pointer;
+}
+
+.skill:nth-child(4):hover {
+  cursor: url('./assets/react.svg') 12 12, pointer;
+}
+
+.skill:nth-child(5):hover {
+  cursor: url('./assets/postgresql.svg') 12 12, pointer;
+}
+
+.skill:nth-child(6):hover {
+  cursor: url('./assets/docker.svg') 12 12, pointer;
+}
+
+.skill:nth-child(7):hover {
+  cursor: url('./assets/infra.svg') 12 12, pointer;
+}
+
+.skill:nth-child(8):hover {
+  cursor: url('./assets/cicd.svg') 12 12, pointer;
+}
+
+.skill:nth-child(9):hover {
+  cursor: url('./assets/ai.svg') 12 12, pointer;
+}
+
+.skill:nth-child(10):hover {
+  cursor: url('./assets/aws.svg') 12 12, pointer;
+}
+
 .availability {
   font-size: 1.1rem;
   color: var(--text-secondary);
