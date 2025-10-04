@@ -1,4 +1,17 @@
+import { useState, useEffect } from 'react';
+
 function Hero() {
+  const titles = ['Full Stack', 'SR Backend', 'SR Software'];
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimationKey(prev => prev + 1);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handleDownloadCV = () => {
     alert('CV download functionality to be implemented');
   };
@@ -7,10 +20,23 @@ function Hero() {
     <section className="hero">
       <div className="hero-content">
         <h1 className="name">Guilherme Rodrigues</h1>
-        <h2 className="title">Full Stack Developer</h2>
+        <div className="title-container">
+          <div className="title-carousel">
+            <div className="title-scroll" key={animationKey}>
+              {titles.concat(titles).map((title, index) => (
+                <span key={`${title}-${index}`} className="title-part">
+                  {title}
+                </span>
+              ))}
+            </div>
+          </div>
+          <span className="title-fixed">Engineer</span>
+        </div>
         <p className="subtitle">Transforming ideas into digital reality through innovative solutions</p>
         
         <div className="skills">
+          <span className="skill">TypeScript</span>
+          <span className="skill">JavaScript</span>
           <span className="skill">Node</span>
           <span className="skill">React</span>
           <span className="skill">PostgreSQL</span>
@@ -27,7 +53,7 @@ function Hero() {
 
         <div className="contact-icons">
           <a 
-            href="https://linkedin.com/in/guilherme-rodrigues" 
+            href="https://www.linkedin.com/in/guilherme-m-rodrigues/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="contact-icon"
@@ -39,7 +65,7 @@ function Hero() {
           </a>
 
           <a 
-            href="https://github.com/guilherme-rodrigues" 
+            href="https://github.com/mr-guilherme" 
             target="_blank" 
             rel="noopener noreferrer"
             className="contact-icon"
@@ -51,7 +77,7 @@ function Hero() {
           </a>
           
           <a 
-            href="mailto:guilherme@example.com" 
+            href="mailto:guilherme.m.rods@gmail.com" 
             className="contact-icon"
             aria-label="Email"
           >
