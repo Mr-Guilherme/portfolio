@@ -100,6 +100,5 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 3. **HTTPS issues**: Ensure domain is properly verified in GitHub settings
 
 ### Required Dependencies
-- `terser`: Added for production builds with minification
 - All dev dependencies properly configured in package.json
 - pnpm-lock.yaml must be committed to repository
