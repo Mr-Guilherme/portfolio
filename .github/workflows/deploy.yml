@@ -1,0 +1,109 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  NODE_ENV: production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'pnpm'
+        
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 8
+        
+    - name: Verify pnpm-lock.yaml
+      run: |
+        if [ ! -f "pnpm-lock.yaml" ]; then
+          echo "Error: pnpm-lock.yaml not found"
+          exit 1
+        fi
+        
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile --ignore-scripts
+      
+    - name: Security audit
+      run: pnpm audit --audit-level moderate
+      continue-on-error: true
+      
+    - name: Run linter
+      run: pnpm run lint
+      
+    - name: Build project
+      run: pnpm run build
+      env:
+        NODE_ENV: production
+        
+    - name: Test build output
+      run: |
+        if [ ! -d "dist" ]; then
+          echo "Build failed: dist directory not found"
+          exit 1
+        fi
+        if [ ! -f "dist/index.html" ]; then
+          echo "Build failed: index.html not found in dist"
+          exit 1
+        fi
+        echo "Build validation successful"
+        ls -la dist/
+        
+    - name: Verify CNAME file
+      run: |
+        if [ -f "public/CNAME" ]; then
+          echo "CNAME file found: $(cat public/CNAME)"
+          if [ -f "dist/CNAME" ]; then
+            echo "CNAME copied to dist: $(cat dist/CNAME)"
+          else
+            echo "Warning: CNAME not found in dist directory"
+          fi
+        fi
+        
+    - name: Upload build artifacts
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
