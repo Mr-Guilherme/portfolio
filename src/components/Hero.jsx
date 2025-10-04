@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 function Hero() {
   const titles = ['Full Stack', 'SR Backend', 'SR Software'];
   const [animationKey, setAnimationKey] = useState(0);
+  const [availabilityText, setAvailabilityText] = useState('');
+  const [showAvailabilityCursor, setShowAvailabilityCursor] = useState(true);
+
+  const availabilityFullText = 'Ready to elevate your next project with cutting-edge solutions';
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -11,6 +15,35 @@ function Hero() {
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    let timeoutId;
+    let cursorInterval;
+    
+    const typingSpeed = () => Math.random() * 50 + 30; // 30-80ms para animação mais suave
+    
+    const typeAvailabilityText = () => {
+      if (currentIndex < availabilityFullText.length) {
+        setAvailabilityText(availabilityFullText.slice(0, currentIndex + 1));
+        currentIndex++;
+        timeoutId = setTimeout(typeAvailabilityText, typingSpeed());
+      }
+    };
+
+    // Delay inicial mais curto para melhor fluidez
+    timeoutId = setTimeout(typeAvailabilityText, 1000);
+
+    // Cursor piscando com frequência mais natural
+    cursorInterval = setInterval(() => {
+      setShowAvailabilityCursor(prev => !prev);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+      clearInterval(cursorInterval);
+    };
+  }, [availabilityFullText]);
 
   const handleDownloadCV = () => {
     alert('CV download functionality to be implemented');
@@ -32,7 +65,9 @@ function Hero() {
           </div>
           <span className="title-fixed">Engineer</span>
         </div>
-        <p className="subtitle">Transforming ideas into digital reality through innovative solutions</p>
+        <p className="subtitle">
+          Transforming ideas into digital reality through innovative solutions
+        </p>
         
         <div className="skills">
           <span className="skill">TypeScript</span>
@@ -47,8 +82,10 @@ function Hero() {
           <span className="skill">AWS</span>
         </div>
         
-        <div className="availability">
-          Ready to elevate your next project with cutting-edge solutions
+        <div className="availability terminal-style">
+          <span className="terminal-prompt">/home/gui &gt; </span>
+          <span className="terminal-text">{availabilityText}</span>
+          {showAvailabilityCursor && <span className="terminal-cursor">|</span>}
         </div>
 
         <div className="contact-icons">
