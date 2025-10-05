@@ -55,7 +55,7 @@ jobs:
       continue-on-error: true
       
     - name: Run linter
-      run: pnpm run lint
+      run: pnpm run lint:ci
       
     - name: Build project
       run: pnpm run build
