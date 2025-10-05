@@ -1,0 +1,123 @@
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 3rem;
+}
+
+.skill {
+	padding: 0.75rem 1.5rem;
+	border: 1px solid var(--border-color);
+	border-radius: 2rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--text-secondary);
+	background-color: var(--bg-secondary);
+	transition: all 0.3s ease;
+	font-family: "JetBrains Mono", monospace;
+}
+
+.skill:hover {
+	border-color: var(--accent-primary);
+	background-color: var(--hover-bg);
+	color: var(--accent-primary);
+	transform: translateY(-2px);
+}
+
+.skill:nth-child(1):hover {
+	cursor:
+		url("../../assets/typescript.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(2):hover {
+	cursor:
+		url("../../assets/javascript.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(3):hover {
+	cursor:
+		url("../../assets/node.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(4):hover {
+	cursor:
+		url("../../assets/react.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(5):hover {
+	cursor:
+		url("../../assets/postgresql.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(6):hover {
+	cursor:
+		url("../../assets/docker.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(7):hover {
+	cursor:
+		url("../../assets/infra.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(8):hover {
+	cursor:
+		url("../../assets/cicd.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(9):hover {
+	cursor:
+		url("../../assets/ai.svg") 12 12,
+		pointer;
+}
+
+.skill:nth-child(10):hover {
+	cursor:
+		url("../../assets/aws.svg") 12 12,
+		pointer;
+}
+
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.skill:focus {
+	outline: 2px solid #007acc;
+	outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+	.skills-list {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.skill {
+		font-size: 0.8rem;
+		padding: 0.3rem 0.6rem;
+	}
+}

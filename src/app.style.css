@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg-primary: #0a0a0a;
+	--bg-secondary: #111111;
+	--bg-tertiary: #1a1a1a;
+	--text-primary: #ffffff;
+	--text-secondary: #a0a0a0;
+	--text-muted: #666666;
+	--accent-primary: #3b82f6;
+	--accent-secondary: #1d4ed8;
+	--border-color: #2a2a2a;
+	--hover-bg: #1f1f1f;
+}
+
+body {
+	font-family:
+		"Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		sans-serif;
+	line-height: 1.6;
+	color: var(--text-primary);
+	background-color: var(--bg-primary);
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hero {
+	text-align: center;
+}
+
+.hero-content {
+	max-width: 850px;
+	margin: 0 auto;
+}
+
+.subtitle {
+	font-size: 1.25rem;
+	color: var(--text-secondary);
+	margin-bottom: 3rem;
+	font-weight: 300;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 1rem;
+	}
+
+	.hero-content {
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.subtitle {
+		font-size: 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms;
+		animation-iteration-count: 1;
+		transition-duration: 0.01ms;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1000px;
+	}
+}
