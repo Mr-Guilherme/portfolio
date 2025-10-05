@@ -19,47 +19,47 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22'
-        cache: 'pnpm'
-        
+
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
       with:
-        version: 8
-        
+        version: 10
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22.20.0'
+        cache: 'pnpm'
+
     - name: Verify pnpm-lock.yaml
       run: |
         if [ ! -f "pnpm-lock.yaml" ]; then
           echo "Error: pnpm-lock.yaml not found"
           exit 1
         fi
-        
+
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
-      
+
     - name: Security audit
       run: pnpm audit --audit-level moderate
       continue-on-error: true
-      
+
     - name: Run linter
       run: pnpm run lint:ci
-      
+
     - name: Build project
       run: pnpm run build
       env:
         VITE_ENV: prd
         VITE_GA_ID: ${{ secrets.VITE_GA_ID }}
-        
+
     - name: Test build output
       run: |
         if [ ! -d "dist" ]; then
@@ -72,7 +72,7 @@ jobs:
         fi
         echo "Build validation successful"
         ls -la dist/
-        
+
     - name: Verify CNAME file
       run: |
         if [ -f "public/CNAME" ]; then
@@ -83,7 +83,7 @@ jobs:
             echo "Warning: CNAME not found in dist directory"
           fi
         fi
-        
+
     - name: Upload build artifacts
       uses: actions/upload-pages-artifact@v3
       with:
@@ -93,15 +93,15 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     steps:
     - name: Setup Pages
       uses: actions/configure-pages@v4
-      
+
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
