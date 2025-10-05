@@ -1,8 +1,14 @@
-import './app.style.css';
+import './home.style.css';
 
-import { Skills, SocialNav, Terminal, TitleJob, TitleName } from './components';
+import {
+	Skills,
+	SocialNav,
+	Terminal,
+	TitleJob,
+	TitleName,
+} from '../components';
 
-function App() {
+export function Home() {
 	return (
 		<main className="container">
 			<section className="hero">
@@ -23,5 +29,3 @@ function App() {
 		</main>
 	);
 }
-
-export default App;

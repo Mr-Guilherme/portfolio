@@ -1,7 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { initAnalytics } from './analytics.ts';
-import App from './app.tsx';
+
+import './main.css';
+
+import { initAnalytics } from './helpers/analytics.ts';
+import { Home } from './pages/home.tsx';
 
 initAnalytics();
 
@@ -10,6 +13,6 @@ if (!rootElement) throw new Error('Failed to find the root element');
 
 createRoot(rootElement).render(
 	<StrictMode>
-		<App />
+		<Home />
 	</StrictMode>,
 );

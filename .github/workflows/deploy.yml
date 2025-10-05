@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -85,9 +85,11 @@ jobs:
         fi
 
     - name: Upload build artifacts
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        path: ./dist
+        name: dist
+        path: dist/
+        retention-days: 1
 
   deploy:
     needs: build
@@ -99,8 +101,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: ./dist
+
     - name: Setup Pages
-      uses: actions/configure-pages@v4
+      uses: actions/configure-pages@v5
+
+    - name: Upload build artifacts
+      uses: actions/upload-pages-artifact@v4
+      with:
+        path: ./dist
 
     - name: Deploy to GitHub Pages
       id: deployment

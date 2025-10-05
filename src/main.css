@@ -37,60 +37,6 @@ svg {
 	height: auto;
 }
 
-.container {
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 0 2rem;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.hero {
-	text-align: center;
-}
-
-.hero-content {
-	max-width: 850px;
-	margin: 0 auto;
-}
-
-.subtitle {
-	font-size: 1.25rem;
-	color: var(--text-secondary);
-	margin-bottom: 3rem;
-	font-weight: 300;
-}
-
-.visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-}
-
-@media (max-width: 768px) {
-	.container {
-		padding: 1rem;
-	}
-
-	.hero-content {
-		text-align: center;
-	}
-}
-
-@media (max-width: 480px) {
-	.subtitle {
-		font-size: 1rem;
-	}
-}
-
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
@@ -98,11 +44,5 @@ svg {
 		animation-duration: 0.01ms;
 		animation-iteration-count: 1;
 		transition-duration: 0.01ms;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		max-width: 1000px;
 	}
 }
