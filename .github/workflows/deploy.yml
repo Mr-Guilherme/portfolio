@@ -16,9 +16,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  NODE_ENV: production
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -60,7 +57,8 @@ jobs:
     - name: Build project
       run: pnpm run build
       env:
-        NODE_ENV: production
+        VITE_ENV: prd
+        VITE_GA_ID: ${{ secrets.VITE_GA_ID }}
         
     - name: Test build output
       run: |
