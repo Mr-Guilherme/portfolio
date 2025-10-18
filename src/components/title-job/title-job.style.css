@@ -81,9 +81,21 @@
 	}
 }
 
+@media (max-width: 480px) {
+	.title-carousel {
+		width: 130px;
+	}
+
+	.title-fixed,
+	.title-part {
+		font-size: 1.25rem;
+	}
+}
+
+/* 
 @media (max-width: 768px) {
 	.title-container {
 		flex-direction: column;
 		gap: 0.5rem;
 	}
-}
+} */

@@ -82,6 +82,17 @@
 	}
 }
 
+@media (max-width: 480px) {
+	.availability.terminal-style {
+		padding: 0.85rem 1rem;
+		max-width: 100%;
+		width: auto;
+		min-width: auto;
+
+		font-size: 0.8rem;
+	}
+}
+
 @media (min-width: 1200px) {
 	.availability.terminal-style {
 		max-width: 800px;
