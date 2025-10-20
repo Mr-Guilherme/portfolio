@@ -1,12 +1,14 @@
 import './social-nav.style.css';
+import downloadCV from '/CV.pdf';
 import EmailIcon from '../../assets/email.svg?react';
 import GitHubIcon from '../../assets/github.svg?react';
 import LinkedInIcon from '../../assets/linkedin.svg?react';
 import type { SocialLinkParams } from './social-nav.type';
 
 export function SocialNav() {
-	const handleDownloadCV = (): void => {
-		alert('CV download functionality to be implemented');
+	const handleDownloadCV = (e: React.MouseEvent<HTMLButtonElement>): void => {
+		e.preventDefault();
+		window.open(downloadCV, '_blank');
 	};
 
 	return (
