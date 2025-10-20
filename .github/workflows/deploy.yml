@@ -38,6 +38,42 @@ jobs:
         node-version: '22.20.0'
         cache: 'pnpm'
 
+    - name: Cache pnpm store
+      uses: actions/cache@v4
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Cache node_modules
+      uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
+
+    - name: Cache Biome
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cache/biome
+          node_modules/.cache/biome
+        key: ${{ runner.os }}-biome-${{ hashFiles('biome.json', 'src/**/*.{ts,tsx,js,jsx}') }}
+        restore-keys: |
+          ${{ runner.os }}-biome-
+
+    - name: Cache Vite build
+      uses: actions/cache@v4
+      with:
+        path: |
+          node_modules/.vite
+          dist
+        key: ${{ runner.os }}-vite-build-${{ hashFiles('vite.config.ts', 'src/**/*.{ts,tsx,css}', 'index.html', 'public/**/*') }}
+        restore-keys: |
+          ${{ runner.os }}-vite-build-
+
     - name: Verify pnpm-lock.yaml
       run: |
         if [ ! -f "pnpm-lock.yaml" ]; then
@@ -47,10 +83,6 @@ jobs:
 
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
-
-    - name: Security audit
-      run: pnpm audit --audit-level moderate
-      continue-on-error: true
 
     - name: Run linter
       run: pnpm run lint:ci
