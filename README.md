@@ -1,16 +1,76 @@
-# React + Vite
+# Portfolio — Guilherme Rodrigues
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, fast, and accessible personal website built with React + Vite to showcase my work, skills, and ways to get in touch.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://guilhermerods.dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Requirements
+- `Node.js >= 18`
+- `pnpm >= 8` (recommended) or `npm`/`yarn`
+- `Git`
 
-## Expanding the ESLint configuration
+### Clone the repository
+```bash
+# HTTPS
+git clone https://github.com/Mr-Guilherme/portfolio.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# SSH
+git clone git@github.com:Mr-Guilherme/portfolio.git
+
+cd portfolio
+```
+
+### Install dependencies
+```bash
+# pnpm (recommended)
+pnpm install
+
+# alternatives
+# npm install
+# yarn install
+```
+
+### Run in development
+```bash
+pnpm dev
+```
+- Visit `http://localhost:5173/` (Vite's default port).
+
+### Build and production preview
+```bash
+pnpm build
+pnpm preview --host
+```
+- `preview` is intended only to test the production build locally.
+
+---
+
+## Free Use & Customization
+You are welcome to reuse this project for your own portfolio. Here are the main customization points:
+
+- Displayed name: edit `src/components/title-name/title-name.tsx` (the `<h1>` content).
+- Roles/titles: edit `src/components/title-job/title-job.tsx` (the `titles` array and the fixed text "Engineer").
+- Skills: edit `src/components/skills/skills.tsx` (the `skills` array).
+- Social links and email: edit `src/components/social-nav/social-nav.tsx` (LinkedIn, GitHub, `mailto:` URLs).
+- Resume/CV: replace `public/CV.pdf` with your own file.
+- Hero subtitle: edit `src/pages/home.tsx` (paragraph with class `subtitle`).
+- Icons: replace or add SVGs in `src/assets/`.
+
+### Analytics (optional)
+Google Analytics initialization is included:
+- Production: create a `.env` file with the following:
+```bash
+VITE_ENV=prd
+VITE_GA_ID=G-XXXXXXXXXX
+```
+- Development: use `VITE_ENV=dev` (or remove the `initAnalytics()` call in `src/main.tsx`).
+
+---
+
+## License (MIT)
+
+MIT License
