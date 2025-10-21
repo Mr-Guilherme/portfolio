@@ -1,9 +1,9 @@
 import './social-nav.style.css';
 import downloadCV from '/CV.pdf';
+import CVIcon from '../../assets/cv.svg?react';
 import EmailIcon from '../../assets/email.svg?react';
 import GitHubIcon from '../../assets/github.svg?react';
 import LinkedInIcon from '../../assets/linkedin.svg?react';
-import CVIcon from '../../assets/cv.svg?react';
 
 import type { SocialLinkParams } from './social-nav.type';
 
@@ -37,9 +37,9 @@ export function SocialNav() {
 			/>
 
 			<SocialLink
-				href="mailto:guilherme.m.rods@gmail.com"
+				href="mailto:contact@guilhermerods.dev"
 				className="contact-icon"
-				ariaLabel="Send email to guilherme.m.rods@gmail.com"
+				ariaLabel="Send email to contact@guilhermerods.dev"
 				title="Email"
 				icon={<EmailIcon aria-hidden="true" />}
 			/>
