@@ -3,6 +3,8 @@ import downloadCV from '/CV.pdf';
 import EmailIcon from '../../assets/email.svg?react';
 import GitHubIcon from '../../assets/github.svg?react';
 import LinkedInIcon from '../../assets/linkedin.svg?react';
+import CVIcon from '../../assets/cv.svg?react';
+
 import type { SocialLinkParams } from './social-nav.type';
 
 export function SocialNav() {
@@ -49,7 +51,7 @@ export function SocialNav() {
 				aria-label="Download resume in PDF format"
 				title="Download CV"
 			>
-				<span className="cv-text">CV</span>
+				<CVIcon aria-hidden="true" />
 			</button>
 		</nav>
 	);
